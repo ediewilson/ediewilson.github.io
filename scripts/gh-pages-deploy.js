@@ -6,9 +6,13 @@ const run = (command, args) => {
   execFileSync(command, args, { stdio: 'inherit' });
 };
 
+const read = (command, args) => execFileSync(command, args, { encoding: 'utf8' }).trim();
+
 (async () => {
+  const originalBranch = read('git', ['branch', '--show-current']) || 'main';
+
   try {
-    run('git', ['checkout', '--orphan', 'gh-pages']);
+    run('git', ['switch', '--orphan', 'gh-pages']);
     console.log('Building started...');
     run('npm', ['run', 'build']);
 
@@ -18,7 +22,7 @@ const run = (command, args) => {
     console.log('Pushing to gh-pages...');
     run('git', ['push', 'origin', 'HEAD:gh-pages', '--force']);
     fs.rmSync(folderName, { recursive: true, force: true });
-    run('git', ['checkout', '-f', 'main']);
+    run('git', ['switch', '-f', originalBranch]);
     run('git', ['branch', '-D', 'gh-pages']);
     console.log('Successfully deployed, check your settings');
   } catch (error) {
