@@ -1,4 +1,4 @@
-# Edie Wilson Personal Site
+# Personal Site
 
 React/Vite personal site for portfolio, resume, projects, and college work.
 
