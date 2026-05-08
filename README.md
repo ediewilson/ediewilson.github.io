@@ -1,5 +1,26 @@
-# Personal Site! 
-The beginnings of a personal website, soon to include a resume, some links to other fun projects, a blog perhaps? 
-Hosted at edie.surge.sh
+# Edie Wilson Personal Site
 
-Resume [here](http://edie.surge.sh/#/Resume)
+React/Vite personal site for portfolio, resume, projects, and college work.
+
+## Development
+
+```bash
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+```
+
+The build writes static files to `dist/` and copies `index.html` to both `200.html` and `404.html` so direct routes such as `/resume` work on static hosts and GitHub Pages.
+
+## Deploy
+
+```bash
+npm run deploy
+```
+
+The deploy script builds the site and publishes `dist/` to the `gh-pages` branch.
