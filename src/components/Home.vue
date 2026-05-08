@@ -1,8 +1,6 @@
 <template>
   <div class="home">
-    <div class="header">
-      <h1>Welcome to my website, I'm glad you're here!</h1>
-    </div>
+    <div class="header"></div>
     <h3>Personal Profile Statement (not exactly the resumé kind)</h3>
     <ul>
       <li>{{ this.intro }}</li>

@@ -4,7 +4,6 @@
         <h5 class="name">Elizabeth (Edie) Wilson</h5>
         <div class="contact-card">
             <div class="display"><i class="fas fa-envelope-square contact"></i><p>ediewilson13@gmail.com</p></div>
-            <div class="display"><i class="fas fa-phone contact"></i><p>603-484-3709</p></div>
             <div class="display"><i class="fas fa-home contact"></i><p>Marina District<br>San Francisco, CA, 94123</p></div>
         </div>
     </div>

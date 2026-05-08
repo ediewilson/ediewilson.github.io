@@ -21,34 +21,24 @@
 <script>
 
 import Journal from './ISP/Journal'
-import axios from 'axios';
-
 export default {
   name: 'ISP',
   data() {
     return {
-      articles: Object,
+      articles: [
+        {
+          title: 'Week 1',
+          subtitle: 'Framing Digital Humanities and Oral History',
+          text: [
+            'This independent study explored how digital tools can support oral history research while preserving the ambiguity and context that make oral histories valuable.'
+          ],
+          sources: ['Course syllabus and Dartmouth Digital History Initiative materials'],
+        },
+      ],
     };
   },
   components: {
       'Journal': Journal,
-  },
-  methods: {
-      getPosts() {
-      const path = 'https://personal-site-edie-backend.herokuapp.com/ISP';
-      axios.get(path)
-          .then((res) => {
-          this.articles = res.data;
-          console.log(this.articles);
-          })
-          .catch((error) => {
-          // eslint-disable-next-line
-          console.error(error);
-          });
-      },
-  },
-  created() {
-    this.getPosts();
   },
 }
 </script>
